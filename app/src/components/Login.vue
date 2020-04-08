@@ -14,7 +14,7 @@
             type="text"
           />
           <v-text-field
-            id="password"
+            v-model="password"
             label="Password"
             name="password"
             prepend-icon="mdi-lock"
@@ -22,8 +22,12 @@
           />
         </v-form>
         <v-card-actions>
+          
           <v-spacer />
-          <v-btn color="primary">Login</v-btn>
+          <v-btn
+            color="primary"
+            @click="login"
+          >Login</v-btn>
         </v-card-actions>
       </v-card>
     </v-container>
@@ -31,6 +35,20 @@
 
 <script>
 export default {
-  name: "Login"
+  name: "Login",
+  data: () => ({
+    email: '',
+    password: ''
+  }),
+  methods: {
+    login () {
+      const user = {
+        email: this.email,
+        password: this.password
+      }
+      this.$store.dispatch('loginAction', user)
+    },
+
+  }
 };
 </script>

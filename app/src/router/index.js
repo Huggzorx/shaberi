@@ -23,11 +23,11 @@ const routes = [
     name: 'Register',
     component: Register
   },
-  // {
-  //   path: '/',
-  //   name: 'Dashboard',
-  //   component: Dashboard
-  // }
+  {
+    path: '/',
+    name: 'Dashboard',
+    component: Dashboard
+  },
   {
     path: '/dashboard',
     name: 'Dashboard',
